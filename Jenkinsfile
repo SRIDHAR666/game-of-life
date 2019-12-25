@@ -8,5 +8,12 @@ node {
     stage('packaging'){
         sh 'mvn package'    
     }
- 
+    
+    stage ('artifacts'){
+        archiveArtifacts 'gameoflife-web/target/*.war
+    }
+    
+    stage ('junit'){
+        junit 'gameoflife-web/target /surefire-reports/*.xml'
+    }
 }
