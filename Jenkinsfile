@@ -14,6 +14,6 @@ node {
     }
     
     stage ('junit') {
-        junit 'gameoflife-web/target /surefire-reports/*.xml'
+        junit 'gameoflife-web/target/surefire-reports/*.xml'
     }
 }
