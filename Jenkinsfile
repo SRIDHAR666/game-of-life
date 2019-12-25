@@ -5,15 +5,15 @@ node {
         git 'https://github.com/shaikkhajaibrahim/game-of-life.git'
     }
     
-    stage('packaging'){
+    stage('packaging') {
         sh 'mvn package'    
     }
     
-    stage ('artifacts'){
-        archiveArtifacts 'gameoflife-web/target/*.war
+    stage ('artifacts') {
+        archiveArtifacts 'gameoflife-web/target/*.war'
     }
     
-    stage ('junit'){
+    stage ('junit') {
         junit 'gameoflife-web/target /surefire-reports/*.xml'
     }
 }
